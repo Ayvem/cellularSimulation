@@ -1,4 +1,7 @@
-# cellularSimulation
+# CellularSimulation
+
+
+# ENGLISH
 
 This is a Python simulation using the Pygame library to model cellular automata and interactions between different types of cells and molecules.
 
@@ -60,10 +63,79 @@ If you'd like to contribute to this project, please follow these guidelines:
 4. Push your branch to your fork.
 5. Create a pull request to merge your changes into the main repository.
 
-If you help I will mention your name on this folder ;) 
+If you help I will mention your name on this file ;) 
 
-## Licence
+## License
 
 This project is licensed under the [MIT License](/LICENSE).
 
-   
+
+
+
+# FRANCAIS
+
+Il s'agit d'une simulation Python utilisant la bibliothèque Pygame pour modéliser des automates cellulaires et des interactions entre différents types de cellules et de molécules.
+
+## Table des matières
+
+- [Introduction](#introduction)
+- [Caractéristiques](#caractéristiques)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Contrôles](#contrôles)
+- [Contribuer](#contribuer)
+- [Licence](#license)
+
+## Introduction
+
+Cette simulation est conçue pour représenter une grille de cellules, où chaque cellule peut contenir différents types de molécules ou de substances. Les cellules interagissent les unes avec les autres selon des règles prédéfinies, et la simulation vous permet d'observer les comportements de différents types de cellules et de molécules.
+
+## Caractéristiques
+
+- Simulation d'automate cellulaire avec différents types de cellules.
+- Interaction entre les molécules et les cellules.
+- Visualisation en temps réel de la simulation à l'aide de Pygame.
+- Contrôles conviviaux pour modifier la grille.
+
+## Installation
+
+Pour exécuter cette simulation sur votre machine locale, suivez les étapes suivantes :
+
+1. Clonez le dépôt :
+   ```Shell
+   git clone https://github.com/Ayvem/cellularSimulation.git
+   ```
+2. Installez Python si ce n'est pas déjà fait. Vous pouvez le télécharger sur python.org.
+3. Installez les bibliothèques nécessaires en utilisant pip :
+   ```shell
+   pip install pygame numpy
+   ```
+## Utilisation
+Pour démarrer la simulation, exécutez le fichier **game.py** :
+```shell
+python game.py
+   ```
+La simulation s'ouvrira dans une fenêtre Pygame, et vous pourrez interagir avec elle en utilisant les contrôles décrits ci-dessous.
+
+## Contrôles
+- Utilisez la molette de la souris pour agrandir ou réduire la grille.
+- Cliquez et faites glisser la souris pour déplacer la grille.
+- Appuyez sur 'e' pour sélectionner le type de cellule précédent.
+- Appuyez sur 'r' pour sélectionner le type de cellule suivant.
+- Appuyez sur 'a' pour basculer entre l'exécution et la pause de la simulation.
+- Appuyez sur 'z' pour afficher des informations sur les molécules dans une cellule sélectionnée.
+
+## Contribuer 
+Si vous souhaitez contribuer à ce projet, veuillez suivre les instructions suivantes :
+
+1. Faites un "Fork" sur le dépôt.
+2. Créez une nouvelle branche pour votre fonctionnalité ou correction de bogue.
+3. Effectuez vos modifications et livrez-les.
+4. Pousser votre branche vers votre fork.
+5. Créez une pull request pour fusionner vos changements dans le dépôt principal.
+
+Si vous m'aidez, je mentionnerai votre nom dans ce fichier ;) 
+
+## Licence
+
+Ce projet est sous licence [MIT License](/LICENSE).
