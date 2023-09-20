@@ -64,6 +64,6 @@ If you help I will mention your name on this folder ;)
 
 ## Licence
 
-This project is licensed under the [MIT License](/LICENCE).
+This project is licensed under the [MIT License](/LICENSE).
 
    
