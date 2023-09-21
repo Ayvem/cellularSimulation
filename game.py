@@ -65,7 +65,8 @@ class game(object):
         #puis id résultat 1, quantité 1, id résultat 2, quantité 2... x 10 puis le total d'éléments crées et consomé
         self.stats_cellules_cosomation_production = np.array(([3, 1, 1, 2, 6, 2, 7, 3, 10, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 9, 2, 8, 3, 11, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 8],
                                                               [4, 0, 24, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6],
-                                                              [5, 0, 22, 6, 8, 6, 9, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 6, 6, 6, 7, 6, 10, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 24])) 
+                                                              [5, 0, 22, 6, 8, 6, 9, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 6, 6, 6, 7, 6, 10, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 24],
+                                                              [6, 0, 23, 5, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 3, 7, 3, 10, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9])) 
         
         self.cellSelected = 1 # id de la cellule sélectionnée
 
@@ -155,20 +156,20 @@ class game(object):
                         # Traitement spécifique en fonction du type de cellule
                         if self.grille[n, m][0] == 7:
                             self.grille[n, m][0] = 2
-                            for k in range(random.randint(25, 50)):
+                            for k in range(random.randint(self.inventorySize // 4, self.inventorySize // 2)):
                                 self.grille[n][m][random.randint(0, self.inventorySize - 1) + 1] = 8  # ATP
                         if self.grille[n, m][0] == 11:
                             for k in range(self.inventorySize + 1):
                                 self.grille[n][m][k] = 0  # Vide
                         if self.grille[n, m][0] == 8:
                             self.grille[n, m][0] = 2
-                            for k in range(random.randint(25, 50)):
+                            for k in range(random.randint(self.inventorySize // 4, self.inventorySize // 2)):
                                 self.grille[n][m][random.randint(0, self.inventorySize - 1) + 1] = 9  # NADPH
-                            for k in range(random.randint(25, 50)):
+                            for k in range(random.randint(self.inventorySize // 4, self.inventorySize // 2)):
                                 self.grille[n][m][random.randint(0, self.inventorySize - 1) + 1] = 11  # H+
                         if self.grille[n, m][0] == 9:
                             self.grille[n, m][0] = 2
-                            for k in range(random.randint(10, 25)):
+                            for k in range(random.randint(self.inventorySize // 4, self.inventorySize // 2)):
                                 self.grille[n][m][random.randint(0, self.inventorySize - 1) + 1] = 22  # PGA
 
                         # Parcours de l'inventaire des cellules
@@ -353,6 +354,11 @@ class game(object):
         # Si la cellule de destination est un PGA Reduction complex (id 5)
         elif self.grille[toX][toY][0] == 5:
             if iam == 8 or iam == 9 or iam == 22:
+                return True
+        
+        # Si la cellule de destination est un RuBP régénération complex (id 5)
+        elif self.grille[toX][toY][0] == 6:
+            if iam == 8 or iam == 23:
                 return True
         
         # Si la cellule de destination est un tube d'évacuation (id 10)
